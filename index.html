@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="A naive implementation of 3d physics in JavaScript."
+    />
+    <title>Three-D Physics</title>
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.124.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.124.0/examples/jsm/"
+        }
+      }
+    </script>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="description">
+      <h1>Simple Physics</h1>
+      <p>
+        A naive implementation of 3d physics that I created in 2020 to learn the
+        basics of constraining collisions of 3d objects. This is a brute force
+        implementation of collisions that uses point to plane interpolation to
+        decide the constrains of movement. In addition, there is a naive
+        approach to creating reactionary forces at the contact point of the
+        object. Though, I would not say that it is remotely accurate to how
+        objects experience forces.
+      </p>
+      <p>
+        I leave this up as a funny project from when I was still playing around
+        with creating physics engines and as a visual demonstration of what
+        could be created coming from a non-formal background of developing
+        engines (I'm not sure if there is a formal background for this though).
+        There are many improvements I would make to the system if I were to
+        create this again such as broad-phase collision checking with spatial
+        hashing and even narrow-phase collision checks for complex objects using
+        spatial hashing. I would also properly implement a momentum conservation
+        function that will properly resolve the momentum of objects during
+        collisions.
+      </p>
+      <p>
+        For now, Here is a project that lets you spawn items inside a cubical
+        room. Click on a button and click inside the box to spawn an object
+        inside. You may also click on items in the box to apply a random upwards
+        force on them. There are a many bugs (such as tunnelling and improper
+        normal forces) but I hope you have fun using up your computer's CPU on
+        this.
+      </p>
+      <button id="box-button">Spawn Box</button>
+      <button id="ball-button">Spawn Ball</button>
+    </div>
+    <div id="renderer"></div>
+    <script type="module" src="scripts/script.js"></script>
+  </body>
+</html>
